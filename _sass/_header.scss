@@ -1,57 +1,74 @@
 .site-header {
-  padding-top: $space-1;
+  padding-top: $space-3;
   padding-bottom: $space-2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.site-header a {
-  color: $header-color;
-  font-size: $h3;
-  font-weight: $header-font-weight;
-  background-image: none;
+.site-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; // Allow wrapping only on very small screens
 }
 
 .site-header .site-title {
+  font-family: $heading-font-family;
   font-size: $h2;
+  font-weight: 800; // Premium bold feel
+  letter-spacing: -0.02em;
+  color: $dark-gray;
+  text-decoration: none;
+  white-space: nowrap; // CRITICAL: Prevent "Murshid Muzamil" from breaking
+  background-image: none;
+  line-height: 1;
 }
 
 .site-nav {
-  padding-top: $nav-padding;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .site-header nav a {
   color: $nav-color;
+  font-size: $h4;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: $space-2;
+  transition: color 0.2s ease;
+  background-image: none;
 }
 
 .site-header nav a:hover,
 .site-header nav a:focus,
-.site-header nav a:active,
-.site-header nav a.nav-active:hover,
-.site-header nav a.nav-active:focus,
-.site-header nav a.nav-active:active {
-  color: $nav-link-color;
-  opacity: 1;
-  border-bottom: $nav-link-border-bottom;
+.site-header nav a.nav-active {
+  color: $dark-gray;
+  border-bottom: 2px solid $dark-gray;
 }
 
 .site-header nav a.nav-active {
-  border-bottom: $nav-active-border-bottom;
+  font-weight: 700;
 }
 
-.site-nav a + a {
-  margin-left: $nav-link-padding-x;
+// Media query for mobile
+@media (max-width: $viewport-small) {
+  .site-header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-nav {
+    margin-top: $space-2;
+    justify-content: center;
+  }
+
+  .site-header nav a {
+    margin: 0 $space-1;
+  }
 }
 
-.site-header a:hover,
-.posts .post a:hover .post-meta,
-.posts .post a:hover .post-title,
-.posts .post a:hover .post-summary {
-  opacity: 0.88;
+// Ensure the clearfixed container doesn't mess up flex
+.site-header-container .clearfix {
+  display: none;
 }
 
-.site-header {
-  text-align: center;
-}
-
-.site-header .site-nav {
-  text-align: center;
-}

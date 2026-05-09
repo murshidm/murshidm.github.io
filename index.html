@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Welcome to Murshid's space</title>
-  </head>
-  <body>
-    <script src="/js/markdown.js" lang="Javascript"></script>
-    <div id="content"></div>
-    <script>
-      // Fetch the markdown file content
-      fetch("/markdown/logseqweb.md")
-        .then((response) => response.text())
-        .then((mdContent) => {
-          // Convert markdown content to HTML
-          window["markdown"].ready.then((markdown) => {
-            //console.log(markdown.parse("# hello\n*world*"));
-            document.getElementById("content").innerHTML =
-              markdown.parse(mdContent);
-          });
-        })
-        .catch((error) => {
-          console.error("Error fetching markdown:", error);
-        });
-    </script>
-  </body>
-</html>
-=======
 ---
 layout: default
 ---
@@ -63,4 +32,4 @@ layout: default
     <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
   {% endif %}
 </div>
->>>>>>> master
+
