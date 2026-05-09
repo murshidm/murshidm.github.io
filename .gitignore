@@ -1,9 +1,21 @@
-_site
-.sass-cache
-.DS_Store
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
 
-# Ignore the config file that's used for gh-pages.
+# Ruby/Bundler
+.bundle/
+vendor/
+Gemfile.lock
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment/Config
 _config.gh-pages.yml
 
-Gemfile.lock
+# Logs
+*.log
