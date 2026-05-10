@@ -5,7 +5,7 @@ date: 2026-05-10
 categories: [AI, Agents, UX]
 ---
 
-The funny thing about the viral HTML vs Markdown post from [Thariq](https://x.com/trq212/status/2052809885763747935) is that it’s basically stating something incredibly obvious, but packaging it in a way that suddenly makes everyone collectively realize it at the same time.
+The funny thing about the viral HTML vs Markdown post from [Thariq](https://x.com/trq212/status/2052809885763747935) (Anthropic) is that it’s basically stating something incredibly obvious, but packaging it in a way that suddenly makes everyone collectively realize it at the same time.
 
 Of course HTML is better for humans. Of course agents should output visually structured artifacts instead of giant Markdown walls. Of course a browser is a better interface for consuming complex AI-generated information than endlessly scrolling through a 500-line `.md` file. None of this is actually surprising.
 
