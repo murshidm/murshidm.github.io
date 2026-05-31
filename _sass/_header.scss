@@ -11,6 +11,15 @@
   flex-wrap: wrap; // Allow wrapping only on very small screens
 }
 
+.site-title-wrapper {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+}
+
 .site-header .site-title {
   font-family: $heading-font-family;
   font-size: $h2;

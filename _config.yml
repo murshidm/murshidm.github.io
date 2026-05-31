@@ -1,8 +1,8 @@
 # Site settings
-title:       Murshid Muzamil
+title:       Murshid Muzamil | AI Agents, DevTools & Systems Thinking
 email:       murshidm@gmail.com
 author:      Murshid Muzamil
-description: "Writings and notes on software, business, technology, and building things on the web."
+description: "Writings, engineering notes, and deep dives on software architecture, building AI agents, knowledge graphs, and cybersecurity. All explored through the lens of systems thinking."
 baseurl:     ""
 url:         "https://murshidm.github.io"
 date_format: "%b %-d, %Y"

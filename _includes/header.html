@@ -1,7 +1,13 @@
 <header class="site-header px2 px-responsive">
   <div class="wrap">
     <div class="measure site-header-container">
-      <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a>
+      {% if page.url == "/" or page.url == "/index.html" %}
+        <h1 class="site-title-wrapper">
+          <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a>
+        </h1>
+      {% else %}
+        <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a>
+      {% endif %}
       <nav class="site-nav">
         {% include navigation.html %}
       </nav>

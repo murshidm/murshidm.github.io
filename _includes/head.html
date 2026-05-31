@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title | strip_html }} &#8211; {% endif %}{{ site.title | strip_html }}</title>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,11 +29,11 @@
 
     <!-- Fonts -->
     {% if site.extended_fonts %}
-    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:900,300&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&amp;subset=latin-ext,latin&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:900,300&amp;subset=latin-ext,latin&display=swap' rel='stylesheet' type='text/css'>
     {% else %}
-    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:900,300&display=swap' rel='stylesheet' type='text/css'>
     {% endif %}
     {% if site.show_social_icons or site.show_sharing_icons %}
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
     <meta property="og:locale" content="{{ site.text.og_locale | default: "en_US" }}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+    <meta property="og:description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.title | xml_escape }}">
     {% if site.post_preview_image %}
@@ -73,7 +73,7 @@
         <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
     {% endif %}
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     {% if site.post_preview_image %}
     <meta name="twitter:image" content="{{ site.url }}/images/me.jpeg" />
@@ -106,4 +106,57 @@
        ga('send', 'pageview');
     </script>
     {% endif %}
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {% if page.layout == "post" %}
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "headline": "{{ page.title | xml_escape }}",
+      "description": "{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}",
+      {% if page.image %}
+      "image": "{{ page.image | absolute_url }}",
+      {% elsif site.post_preview_image %}
+      "image": "{{ "/images/me.jpeg" | absolute_url }}",
+      {% endif %}
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      {% if page.update_date %}
+      "dateModified": "{{ page.update_date | date_to_xmlschema }}",
+      {% else %}
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      {% endif %}
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author | xml_escape }}",
+        "url": "{{ "/about/" | absolute_url }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title | xml_escape }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ "/favicon-192x192.png" | absolute_url }}"
+        }
+      }
+    }
+    {% else %}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ site.title | xml_escape }}",
+      "url": "{{ "/" | absolute_url }}",
+      "description": "{{ site.description | xml_escape }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author | xml_escape }}",
+        "url": "{{ "/about/" | absolute_url }}"
+      }
+    }
+    {% endif %}
+    </script>
 </head>

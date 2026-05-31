@@ -59,7 +59,7 @@ In short: the wiki is a **structured knowledge repository**, not a fully connect
 
 Graphify introduces a different paradigm: a **semantic knowledge graph extracted from documents and relationships**.
 
-- [Graphify](https://github.com/safishamsi/graphify){:target="_blank"}
+- [Graphify](https://github.com/safishamsi/graphify){:target="_blank" rel="noopener noreferrer"}
 
 Instead of organizing knowledge into pages, it builds:
 
