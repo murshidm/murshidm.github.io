@@ -9,7 +9,7 @@ When the companies building the future start asking for a brake pedal, it’s wo
 
 This week, Anthropic warned that AI development may be moving so fast that society needs a way to slow things down if risks become too great. The concern isn’t Skynet or killer robots. It’s something far more realistic: AI systems becoming capable of helping build their own successors faster than humans can understand or regulate them.
 
-Source: [Yahoo Tech](https://news.yahoo.com/)
+Source: [Yahoo Tech](https://news.yahoo.com/){:target="_blank" rel="noopener noreferrer"}
 
 For years, science fiction imagined a world where machines take over. The reality may be less dramatic but far more disruptive. The biggest impact of AI won’t be robots replacing humanity. It will be algorithms replacing parts of human work.
 
