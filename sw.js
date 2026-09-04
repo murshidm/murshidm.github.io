@@ -1,13 +1,13 @@
 ---
 layout: null
 ---
-var CACHE_NAME = "pixyll2";
+var CACHE_NAME = "pixyll3";
 
 self.addEventListener("install", function(e) {
   e.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll([
-        "{{ '/css/pixyll.css' | relative_url }}?{{ site.time | date: '%Y%m%d%H%M' }}",
+        "{{ '/assets/css/pixyll.css' | relative_url }}?{{ site.time | date: '%Y%m%d%H%M' }}",
         "{{ '/' | relative_url }}"
       ]);
     })

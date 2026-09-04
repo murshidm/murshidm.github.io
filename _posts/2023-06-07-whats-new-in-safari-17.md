@@ -27,7 +27,7 @@ JPEG XL offers the capability to recompress images without compromising data, le
 
 What sets JPEG XL apart is its progressive loading capability, enabling users to start viewing images before the entire file is downloaded.
 
-![](/images/safari17-jxl.png)
+![](/assets/images/safari17-jxl.png)
 
 While it competes with AVIF and WebP, this new image format aims to become the unifying solution to raster images on the web, as similar to what SVG is to vectors.
 
@@ -53,7 +53,7 @@ While Safari has previously supported other Early hints such as DNS prefetch (de
 
 With preconnect, browsers have the ability to establish connections with external resources, like servers and APIs, ahead of time. This is particularly useful when a webpage includes references to external libraries or resources, such as Google Fonts.
 
-![](/images/safari17-google.png)
+![](/assets/images/safari17-google.png)
 
 Image 1: An example of preconnect tag to Google fonts servers
 

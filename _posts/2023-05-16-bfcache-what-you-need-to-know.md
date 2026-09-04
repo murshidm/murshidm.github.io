@@ -22,7 +22,7 @@ Bfcache operates by saving a comprehensive snapshot of a page, including the Jav
 
 This snapshot encompasses the HTML, CSS, JavaScript, and all other resources essential for rendering the page. Subsequently, if the user navigates away from and subsequently back to the page, the browser can restore it from memory instead of fetching it again from the server.
 
-![](/images/bfcache-what-stored.jpg)
+![](/assets/images/bfcache-what-stored.jpg)
 
 ### PageTransitionEvent
 
@@ -51,8 +51,8 @@ There are a few things that you can do to make your pages eligible for bfcache:
 
 You can check if your pages are eligible for bfcache using the Chrome DevTools. To do this, open the DevTools and go to the Applications tab. In the Cache section, look for the Back/forward cache entry. If your pages are eligible for bfcache, they will be listed in this section.
 
-![](/images/bfcache-check-1.jpg)
-![](/images/bfcache-check-2.jpg)
+![](/assets/images/bfcache-check-1.jpg)
+![](/assets/images/bfcache-check-2.jpg)
 
 You can find more information about testing page optimization for instant loads and identifying issues that may affect eligibility for back-forward cache in the [Chrome DevTools documentation](https://developer.chrome.com/docs/devtools/application/back-forward-cache/).
 
@@ -79,7 +79,7 @@ Bfcache can improve the performance of web pages by reducing the number of times
 ## Key observations
 
 In her recent talk on [How to Prioritize Web Performance Optimizations](https://www.youtube.com/watch?v=bZV7XxsCNb8&t=647s) by Melissa Ada, she presented some interesting observations with regard to bfcache.
-![](/images/bfcache-ada-1.jpg)
+![](/assets/images/bfcache-ada-1.jpg)
 (Slide from [Melissa Ada](https://www.welovespeed.com/assets/docs/2023/melissa-ada-prioritizing-web-werformance-pptimizations.pdf))
 
 The sharp increase in CLS scores for mobile devices in 2022 is believed to be closely related to the introduction of bfcache. The Web Almanac team suspects this as one of the primary factors contributing to the trend.

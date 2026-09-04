@@ -24,7 +24,7 @@ Here are the general steps that Chrome takes to determine the LCP element:
 
 It's important to note that the LCP value may [change](https://web.dev/lcp/#when-is-largest-contentful-paint-reported) as the page continues to load, and the final LCP value is typically the one recorded when the page finishes loading or when the user interacts with the page.
 
-![](/images/lcp-1.png.webp)
+![](/assets/images/lcp-1.png.webp)
 Figure 1: LCP element changed after the page is fully loaded
 
 ## Factors that could affect LCP value
@@ -48,7 +48,7 @@ For example, an image that takes up a significant portion of a desktop screen ma
 
 Additionally, mobile devices often have slower network speeds and processing power compared to desktops, which can impact how quickly the LCP element is loaded and rendered on the screen.
 
-![](/images/lcp-2.png.webp)
+![](/assets/images/lcp-2.png.webp)
 Figure 2: LCP element for [dailymail.co.uk](http://dailymail.co.uk/) is different on mobile and desktop
 
 ### Common LCP elements on a webpage
@@ -65,7 +65,7 @@ Below are some common elements in web pages that are eligible:
 5.  Text
     Text can also be an LCP element, especially if it is the primary content on a webpage.
 
-![](/images/lcp-3.png.webp)
+![](/assets/images/lcp-3.png.webp)
 Figure 3: LCP element can defer according to a specific website
 
 ### What elements may not be considered
@@ -82,7 +82,7 @@ Since the lazy load resources are not loaded immediately, they may not be consid
 
 SVG elements on a page although the largest visible element may not be considered for LCP as well.
 
-![](/images/lcp-4.png.webp)
+![](/assets/images/lcp-4.png.webp)
 Figure 4: A larger SVG element may be ignored
 
 ### How to find the LCP element on my webpage
@@ -97,7 +97,7 @@ In a local environment, you can use Chrome's DevTools:
 4.  After the page has loaded, locate the Largest Contentful Paint (LCP) option under the timings row and hover over it to view the LCP time.
 5.  To identify the LCP element, look for the element highlighted in blue in the screenshot shown in the LCP element section of the Developer Tools.
 
-![](/images/lcp-5.png.webp)
+![](/assets/images/lcp-5.png.webp)
 Figure 5: Identify the LCP element on Google Chrome Dev Tools
 
 Alternatively, you can run a free webpage test on [https://www.webpagetest.org/](https://www.webpagetest.org/) where it has advanced tools to track LCP changes.
@@ -110,7 +110,7 @@ Alternatively, you can run a free webpage test on [https://www.webpagetest.org/]
 6.  Click on Adjust Filmstrip Settings > Filmstrip options > Highlight Largest Contentful Paints
 7.  You can observe the LCP element as it loads on the filmstrip view
 
-![](/images/lcp-6.png.webp)
+![](/assets/images/lcp-6.png.webp)
 Figure 6: Identify the LCP element by running a [webpagetest.org](http://webpagetest.org/) audit
 
 UPDATE 10/Apr/2023 : To deep dive into LCP and recent trends from CrUX report refer [https://almanac.httparchive.org/en/2022/performance#largest-contentful-paint-lcp](https://almanac.httparchive.org/en/2022/performance#largest-contentful-paint-lcp)

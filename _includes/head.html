@@ -25,7 +25,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ "/feed.xml" | relative_url }}" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/pixyll.css" | relative_url }}?{{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
+    <link rel="stylesheet" href="{{ "/assets/css/pixyll.css" | relative_url }}?{{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
 
     <!-- Fonts -->
     {% if site.extended_fonts %}
@@ -63,7 +63,7 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.title | xml_escape }}">
     {% if site.post_preview_image %}
-    <meta property="og:image" content="{{ site.url }}/images/me.jpeg">
+    <meta property="og:image" content="{{ site.url }}/assets/images/me.jpeg">
     {% endif %}
 
     <!-- Twitter Card -->
@@ -76,25 +76,20 @@
     <meta name="twitter:description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     {% if site.post_preview_image %}
-    <meta name="twitter:image" content="{{ site.url }}/images/me.jpeg" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/me.jpeg" />
     {% endif %}
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ "/favicon-57x57.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ "/favicon-114x114.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ "/favicon-72x72.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ "/favicon-144x144.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ "/favicon-60x60.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ "/favicon-120x120.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ "/favicon-76x76.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ "/favicon-152x152.png" | relative_url }}?v=2">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/favicon-180x180.png" | relative_url }}?v=2">
-    <link rel="icon" type="image/png" href="{{ "/favicon-192x192.png" | relative_url }}?v=2" sizes="192x192">
-    <link rel="icon" type="image/png" href="{{ "/favicon-96x96.png" | relative_url }}?v=2" sizes="96x96">
-    <link rel="icon" type="image/png" href="{{ "/favicon-16x16.png" | relative_url }}?v=2" sizes="16x16">
-    <link rel="icon" type="image/png" href="{{ "/favicon-32x32.png" | relative_url }}?v=2" sizes="32x32">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}?v=2">
+    <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicons/favicon.svg" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/images/favicons/favicon-16.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/images/favicons/favicon-32.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ "/assets/images/favicons/favicon-48.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/images/favicons/favicon-96.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ "/assets/images/favicons/favicon-128.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="256x256" href="{{ "/assets/images/favicons/favicon-256.png" | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ "/assets/images/favicons/apple-touch-icon.png" | relative_url }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/images/favicons/favicon.ico" | relative_url }}">
+    <meta name="msapplication-TileImage" content="{{ "/assets/images/favicons/mstile-150.png" | relative_url }}">
     <meta name="msapplication-config" content="{{ "/browserconfig.xml" | relative_url }}">
 
     {% if site.google_analytics %}
@@ -123,7 +118,7 @@
       {% if page.image %}
       "image": "{{ page.image | absolute_url }}",
       {% elsif site.post_preview_image %}
-      "image": "{{ "/images/me.jpeg" | absolute_url }}",
+      "image": "{{ "/assets/images/me.jpeg" | absolute_url }}",
       {% endif %}
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       {% if page.update_date %}
@@ -141,7 +136,7 @@
         "name": "{{ site.title | xml_escape }}",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{ "/favicon-192x192.png" | absolute_url }}"
+          "url": "{{ "/assets/images/favicons/android-chrome-512.png" | absolute_url }}"
         }
       }
     }
