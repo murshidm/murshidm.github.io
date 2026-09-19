@@ -56,7 +56,7 @@ So the interesting part isn't simply that Jev can classify something. It's that 
 
 ---
 
-# How the demo works
+## How the demo works
 
 The architecture is deliberately simple.
 
@@ -217,7 +217,7 @@ It means **many structured decisions can be sent together and processed in paral
 
 ---
 
-# What do you get back?
+## What do you get back?
 
 For each `choice` question, Jev returns more than just the selected document.
 
@@ -267,7 +267,7 @@ The demo also exposes the raw JSON response so you can see what actually came ba
 
 ---
 
-# The first interesting result
+## The first interesting result
 
 On my original run, I had:
 
@@ -303,7 +303,7 @@ These are measurements from these two runs on the same files and through the sam
 
 ---
 
-# But then I looked at the tokens
+## But then I looked at the tokens
 
 This is where things became more interesting.
 
@@ -324,7 +324,7 @@ The answer is in how the request is structured.
 
 ---
 
-# Why is Jev's input larger?
+## Why is Jev's input larger?
 
 In the current demo, each question contains the list of documents it can choose from.
 
@@ -353,7 +353,7 @@ It's an inefficiency in my current implementation.
 
 ---
 
-# Why is Jev's output larger?
+## Why is Jev's output larger?
 
 This one is different.
 
@@ -394,7 +394,7 @@ TypeSafe's documentation describes `choice` as returning a distribution over the
 
 ---
 
-# Then I did a pricing sanity check
+## Then I did a pricing sanity check
 
 This is where I think it's important not to mix up **speed** and **cost**.
 
@@ -435,7 +435,7 @@ Those are separate claims.
 
 ---
 
-# What happens when the problem gets bigger?
+## What happens when the problem gets bigger?
 
 This is where the system-design question gets interesting.
 
@@ -479,7 +479,7 @@ The API call count stays at one, but the amount of decision work grows with the 
 
 ---
 
-# What might the token usage look like?
+## What might the token usage look like?
 
 Using my 10-transaction/9-document run as a rough baseline, scaling the problem up to 50 transactions and 30 documents could put the request somewhere around:
 
@@ -503,7 +503,7 @@ The amount of work inside that call still grows as the number of questions and c
 
 ---
 
-# This led me to a bigger Jev design principle
+## This led me to a bigger Jev design principle
 
 If you're designing a system around Jev, **keep the choice set small**.
 
@@ -533,7 +533,7 @@ That's a much more useful question than simply asking how many rows are in the b
 
 ---
 
-# There's also a hard limit
+## There's also a hard limit
 
 There is another practical constraint: TypeSafe currently documents a **64k-token limit** for the state plus all questions in a call.
 
@@ -555,7 +555,7 @@ Shorter questions and smaller choice sets give you more headroom, but they don't
 
 ---
 
-# The pattern TypeSafe recommends
+## The pattern TypeSafe recommends
 
 Interestingly, the solution to the choice-set problem isn't some trick I invented.
 
@@ -595,7 +595,7 @@ The model's choice set stays small even as the overall document collection grows
 
 ---
 
-# One thing I'd change in my own demo
+## One thing I'd change in my own demo
 
 The current implementation repeats document descriptions inside each question.
 
@@ -635,7 +635,7 @@ I'd also rerun the comparison after making this change rather than assuming how 
 
 ---
 
-# What I think the demo actually taught me
+## What I think the demo actually taught me
 
 The most interesting thing I got from this exercise isn't:
 
@@ -679,7 +679,7 @@ And that is probably the biggest thing I learned from actually putting one of th
 
 ---
 
-# Final takeaway
+## Final takeaway
 
 The cleanest mental model I have now is:
 

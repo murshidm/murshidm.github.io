@@ -33,7 +33,7 @@ enable_anchorjs: false
 og_image:
   collections: ["posts", "pages"]
   output_dir: "assets/images/og"
-  force: true
+  force: false
   domain: "murshidm.github.io"
   canvas:
     background_color: "#f7f4ee"

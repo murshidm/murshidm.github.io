@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="{% if page.meta_description %}{{ page.meta_description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% elsif page.summary %}{{ page.summary | strip_html | xml_escape }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | xml_escape }}{% else %}{{ site.description | strip_html | xml_escape }}{% endif %}">
-  <link rel="manifest" type="application/manifest+json; charset=utf-8" href="{{ " /manifest.json" | relative_url }}" />
+  <link rel="manifest" type="application/manifest+json; charset=utf-8" href="{{ site.baseurl }}/manifest.json" />
   {% if page.meta_robots %}
   <meta name="robots" content="{{ page.meta_robots }}">
   {% else %}
@@ -30,11 +30,11 @@
   {% if page.categories %}
   <meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ " /feed.xml" |
-    relative_url }}" />
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}"
+    href="{{ site.baseurl }}/feed.xml" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ " /assets/css/pixyll.css" | relative_url }}?{{ site.time | date: "%Y%m%d%H%M" }}"
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pixyll.css?{{ site.time | date: " %Y%m%d%H%M" }}"
     type="text/css">
 
   <!-- Fonts -->
@@ -102,19 +102,19 @@
   {% endif %}
 
   <!-- Icons -->
-  <link rel="icon" type="image/svg+xml" href="{{ " /assets/images/favicons/favicon.svg" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ " /assets/images/favicons/favicon-16.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ " /assets/images/favicons/favicon-32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="48x48" href="{{ " /assets/images/favicons/favicon-48.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ " /assets/images/favicons/favicon-96.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="128x128" href="{{ " /assets/images/favicons/favicon-128.png" | relative_url
+  <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/images/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/images/favicons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/images/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ site.baseurl }}/assets/images/favicons/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ site.baseurl }}/assets/images/favicons/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="{{ site.baseurl }}/assets/images/favicons/favicon-128.png"
     }}">
-  <link rel="icon" type="image/png" sizes="256x256" href="{{ " /assets/images/favicons/favicon-256.png" | relative_url
+  <link rel="icon" type="image/png" sizes="256x256" href="{{ site.baseurl }}/assets/images/favicons/favicon-256.png"
     }}">
-  <link rel="apple-touch-icon" href="{{ " /assets/images/favicons/apple-touch-icon.png" | relative_url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ " /assets/images/favicons/favicon.ico" | relative_url }}">
-  <meta name="msapplication-TileImage" content="{{ " /assets/images/favicons/mstile-150.png" | relative_url }}">
-  <meta name="msapplication-config" content="{{ " /browserconfig.xml" | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicons/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicons/favicon.ico">
+  <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/images/favicons/mstile-150.png">
+  <meta name="msapplication-config" content="{{ site.baseurl }}/browserconfig.xml">
 
   {% if site.google_analytics %}
   <script type="text/javascript">
